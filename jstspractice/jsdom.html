@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 { color: blue;}
+        #para1 {color: green; text-decoration: underline;}
+        .btn {color: red;}
+    </style>
+</head>
+<body>
+    <h1>Heading1</h1>
+    <p id="para1">This is para 1</p>
+    <button class="btn" onclick="handleClick()">Click Me</button>
+    <button onclick="disableBtn()">Disable all buttons </button>
+    
+    <script>
+        const handleClick =() =>{
+            document.getElementById("para1").innerText="This is para 2"
+            document.getElementById("para1").style.color="yellow"
+            }
+            const disableBtn =()=>{
+                document.querySelectorAll("button").forEach(btn=>btn.disabled=true)
+            }
+    </script>
+</body>
+</html>

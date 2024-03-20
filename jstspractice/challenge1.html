@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Rounds played : <p id="rounds">0</p></h4>
+    <h4>Current Total :  <p id="total">0</p></h4>
+    <h4>Current Average :  <p id="average">0</p></h4>
+    <button onclick="handleClick(1)">Score 1</button>
+    <button onclick="handleClick(2)">Score 2</button>
+    <button onclick="handleClick(3)">Score 3</button>
+
+    <script>
+        let rounds =0;
+        let total =0;
+        let average = 0;
+        const handleClick = (btnClicked)=>{
+            console.log(btnClicked)
+            rounds=rounds +1;
+            switch(btnClicked){
+                case 1:
+                total=total+1
+                break;
+                case 2:
+                total=total+2
+                break;
+                case 3:
+                total=total+3
+                break;
+            }
+            average = total/rounds;
+            document.getElementById("rounds").innerText=rounds;
+        document.getElementById("total").innerText=total;
+        document.getElementById("average").innerText=average;
+        if(rounds===10){
+            document.querySelectorAll("button").forEach(btn=>btn.disabled=true)
+        }
+        }
+    </script>
+</body>
+</html>
